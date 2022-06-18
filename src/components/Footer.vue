@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div class="text-center text-sm font-semibold mt-4">
+    2022 - Badreddine Zatout
+  </div>
 </template>
 
 <script setup>

@@ -62,32 +62,44 @@
       <div class="hidden sm:flex items-centre text-white">
         <router-link :to="{ name: 'Home' }">
           <button
-            class="hover:font-semibold p-2 mr-2"
-            :class="{ 'font-bold': route.fullPath === '/' }"
+            class="hover:font-semibold p-2 mr-2 rounded-md"
+            :class="{
+              'bg-orange-500': route.fullPath === '/',
+              'font-semibold': route.fullPath === '/',
+            }"
           >
             Movies
           </button>
         </router-link>
         <router-link :to="{ name: 'Actors' }">
           <button
-            class="hover:font-semibold p-2 mr-2"
-            :class="{ 'font-bold': route.fullPath === '/actors' }"
+            class="hover:font-semibold p-2 mr-2 rounded-md"
+            :class="{
+              'bg-orange-500': route.fullPath === '/actors',
+              'font-bold': route.fullPath === '/actors',
+            }"
           >
             Actors
           </button>
         </router-link>
         <router-link :to="{ name: 'Profile' }">
           <button
-            class="hover:font-semibold p-2 mr-2"
-            :class="{ 'font-bold': route.fullPath === '/profile' }"
+            class="hover:font-semibold p-2 mr-2 rounded-md"
+            :class="{
+              'bg-orange-500': route.fullPath === '/profile',
+              'font-bold': route.fullPath === '/profile',
+            }"
           >
             Profile
           </button>
         </router-link>
         <router-link :to="{ name: 'Contact' }">
           <button
-            class="hover:font-semibold p-2 mr-2"
-            :class="{ 'font-bold': route.fullPath === '/contact' }"
+            class="hover:font-semibold p-2 mr-2 rounded-md"
+            :class="{
+              'bg-orange-500': route.fullPath === '/contact',
+              'font-bold': route.fullPath === '/contact',
+            }"
           >
             Contact
           </button>
