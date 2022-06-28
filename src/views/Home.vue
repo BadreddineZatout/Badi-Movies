@@ -1,8 +1,11 @@
 <template>
-  <div>Home</div>
+  <div>
+    <PopularMovies />
+  </div>
 </template>
 
 <script setup>
+import PopularMovies from "../components/PopularMovies.vue";
 </script>
 
 <style lang="scss" scoped>
