@@ -1,49 +1,34 @@
 <template>
   <div class="flex flex-col justify-center">
     <router-link :to="`/movie/${movie.id}`">
-      <div class="py-3 sm:max-w-xl sm:mx-auto">
+      <div class="py-3 sm:mx-auto sm:max-w-xl">
         <div
-          class="
-            bg-white
-            shadow-lg
-            border-gray-100
-            max-h-80
-            border
-            sm:rounded-3xl
-            p-8
-            flex
-            space-x-8
-          "
+          class="flex max-h-80 space-x-8 border border-gray-100 bg-white p-8 shadow-lg sm:rounded-3xl"
         >
-          <div class="h-48 overflow-visible w-1/2">
+          <div class="h-48 w-1/2 overflow-visible">
             <img class="rounded-3xl shadow-lg" :src="posterPath" alt="" />
           </div>
-          <div class="flex flex-col w-1/2 justify-between">
+          <div class="flex w-1/2 flex-col justify-between">
             <div class="space-y-4">
-              <div class="flex justify-between items-start">
+              <div class="flex items-start justify-between">
                 <h2 class="text-sm font-semibold">{{ movie.title }}</h2>
-                <div class="bg-yellow-400 font-bold rounded-xl p-2">
+                <div class="rounded-xl bg-yellow-400 p-2 font-bold">
                   {{ movie.vote_average }}
                 </div>
               </div>
-              <p class="text-gray-400 text-xs max-h-40 overflow-y-hidden">
+              <p class="max-h-40 overflow-y-hidden text-xs text-gray-400">
                 {{ movie.overview }}
               </p>
             </div>
             <div
-              class="
-                flex-col
-                justify-items-start
-                font-semibold
-                text-gray-400 text-xs
-              "
+              class="flex-col justify-items-start text-xs font-semibold text-gray-400"
             >
               <span class="flex">
                 <p v-for="(genre_id, index) in movie.genre_ids" :key="genre_id">
                   {{ getTypeName(genre_id, index) }}
                 </p>
               </span>
-              <p class="max-w-0 mt-1">{{ movie.release_date }}</p>
+              <p class="mt-1 max-w-0">{{ movie.release_date }}</p>
             </div>
           </div>
         </div>
@@ -78,5 +63,4 @@ const getTypeName = (genreId, index) => {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

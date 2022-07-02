@@ -1,6 +1,6 @@
 <template>
   <div class="mx-3">
-    <div class="grid grid-flow-row grid-cols-1 sm:grid-cols-3 gap-x-2 gap-y-10">
+    <div class="grid grid-flow-row grid-cols-1 gap-x-2 gap-y-10 sm:grid-cols-3">
       <MovieCard
         v-for="movie in movies"
         :key="movie.id"
@@ -24,7 +24,6 @@ onMounted(async () => {
   try {
     const response = await axios.get("/movie/popular");
     movies.value = response.data.results;
-    console.log(movies);
   } catch (error) {
     console.log(error);
   }
@@ -40,5 +39,4 @@ const fetchGenres = async () => {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

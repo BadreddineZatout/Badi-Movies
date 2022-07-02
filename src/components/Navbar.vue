@@ -1,22 +1,16 @@
 <template>
   <nav
-    class="
-      sm:flex sm:items-center sm:justify-between sm:flex-wrap
-      bg-orange-600
-      py-1
-      lg:px-12
-      shadow
-    "
+    class="bg-orange-600 py-1 shadow sm:flex sm:flex-wrap sm:items-center sm:justify-between lg:px-12"
   >
     <div class="flex items-center justify-start gap-4">
       <div class="flex items-center">
-        <div class="sm:hidden ml-3">
+        <div class="ml-3 sm:hidden">
           <button
-            class="block h-8 mr-3 text-white items-center hover:font-bold"
+            class="mr-3 block h-8 items-center text-white hover:font-bold"
             @click="show = !show"
           >
             <svg
-              class="w-6 h-6"
+              class="h-6 w-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -40,7 +34,7 @@
           </button>
         </div>
         <svg
-          class="w-12 h-12 sm:w-16 sm:h-16 text-white"
+          class="h-12 w-12 text-white sm:h-16 sm:w-16"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -53,16 +47,16 @@
             d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
           ></path>
         </svg>
-        <h1 class="text-white text-lg ml-2 sm:text-2xl sm:font-bold">
+        <h1 class="ml-2 text-lg text-white sm:text-2xl sm:font-bold">
           Badi Movie
         </h1>
       </div>
 
       <!-- Web View -->
-      <div class="hidden sm:flex items-centre text-white">
+      <div class="items-centre hidden text-white sm:flex">
         <router-link :to="{ name: 'Home' }">
           <button
-            class="hover:font-semibold p-2 mr-2 rounded-md"
+            class="mr-2 rounded-md p-2 hover:font-semibold"
             :class="{
               'bg-orange-500': route.fullPath === '/',
               'font-semibold': route.fullPath === '/',
@@ -73,7 +67,7 @@
         </router-link>
         <router-link :to="{ name: 'Actors' }">
           <button
-            class="hover:font-semibold p-2 mr-2 rounded-md"
+            class="mr-2 rounded-md p-2 hover:font-semibold"
             :class="{
               'bg-orange-500': route.fullPath === '/actors',
               'font-bold': route.fullPath === '/actors',
@@ -84,7 +78,7 @@
         </router-link>
         <router-link :to="{ name: 'Profile' }">
           <button
-            class="hover:font-semibold p-2 mr-2 rounded-md"
+            class="mr-2 rounded-md p-2 hover:font-semibold"
             :class="{
               'bg-orange-500': route.fullPath === '/profile',
               'font-bold': route.fullPath === '/profile',
@@ -95,7 +89,7 @@
         </router-link>
         <router-link :to="{ name: 'Contact' }">
           <button
-            class="hover:font-semibold p-2 mr-2 rounded-md"
+            class="mr-2 rounded-md p-2 hover:font-semibold"
             :class="{
               'bg-orange-500': route.fullPath === '/contact',
               'font-bold': route.fullPath === '/contact',
@@ -106,14 +100,14 @@
         </router-link>
       </div>
     </div>
-    <div class="hidden sm:flex items-center justify-end w-1/4">
+    <div class="hidden w-1/4 items-center justify-end sm:flex">
       <input
         type="text"
         placeholder="Search for movie"
-        class="p-2 w-full rounded-lg focus:ring-transparent"
+        class="w-full rounded-lg p-2 focus:ring-transparent"
       />
       <svg
-        class="w-6 h-6 absolute mr-2 text-gray-400"
+        class="absolute mr-2 h-6 w-6 text-gray-400"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -130,18 +124,11 @@
     <!-- Mobile View -->
     <div
       v-show="show"
-      class="
-        sm:hidden
-        grid grid-cols-1
-        gap-y-2
-        pl-2
-        items-centre
-        text-white text-left
-      "
+      class="items-centre grid grid-cols-1 gap-y-2 pl-2 text-left text-white sm:hidden"
     >
       <router-link :to="{ name: 'Home' }">
         <button
-          class="hover:font-semibold p-2 mr-2"
+          class="mr-2 p-2 hover:font-semibold"
           :class="{ 'font-bold': route.fullPath === '/' }"
         >
           Movies
@@ -149,7 +136,7 @@
       </router-link>
       <router-link :to="{ name: 'Actors' }">
         <button
-          class="hover:font-semibold p-2 mr-2"
+          class="mr-2 p-2 hover:font-semibold"
           :class="{ 'font-bold': route.fullPath === '/actors' }"
         >
           Actors
@@ -157,7 +144,7 @@
       </router-link>
       <router-link :to="{ name: 'Profile' }">
         <button
-          class="hover:font-semibold p-2 mr-2"
+          class="mr-2 p-2 hover:font-semibold"
           :class="{ 'font-bold': route.fullPath === '/profile' }"
         >
           Profile
@@ -165,7 +152,7 @@
       </router-link>
       <router-link :to="{ name: 'Contact' }">
         <button
-          class="hover:font-semibold p-2 mr-2"
+          class="mr-2 p-2 hover:font-semibold"
           :class="{ 'font-bold': route.fullPath === '/contact' }"
         >
           Contact
@@ -182,5 +169,4 @@ const route = useRoute();
 let show = ref(false);
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
