@@ -3,8 +3,8 @@
     <h2 class="mb-10 ml-5 text-3xl font-semibold text-gray-800">
       Upcoming Movies
     </h2>
-    <div class="mx-auto max-w-md bg-gray-300">
-      <carousel :items-to-show="1" :autoplay="2000" :wrap-around="true">
+    <div class="mx-auto max-w-4xl bg-gray-300">
+      <carousel :items-to-show="3.4" :autoplay="2000" :wrap-around="true">
         <slide :index="i" :key="i" v-for="(movie, i) in this.upcomingMovies">
           <figure class="carousel__item m-0">
             <img
@@ -45,4 +45,23 @@ onMounted(async () => {
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.carousel__slide > .carousel__item {
+  transform: scale(1);
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.carousel__slide--visible > .carousel__item {
+  opacity: 1;
+  transform: rotateY(0);
+}
+.carousel__slide--next > .carousel__item {
+  transform: scale(0.9) translate(-10px);
+}
+.carousel__slide--prev > .carousel__item {
+  transform: scale(0.9) translate(10px);
+}
+.carousel__slide--active > .carousel__item {
+  transform: scale(1.1);
+}
+</style>
