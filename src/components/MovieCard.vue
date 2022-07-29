@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col justify-center">
+  <div class="flex flex-col justify-center hover:scale-105">
     <router-link :to="`/movie/${movie.id}`">
       <div class="py-3 sm:mx-auto sm:max-w-xl">
         <div

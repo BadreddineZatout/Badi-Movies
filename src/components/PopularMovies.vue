@@ -2,7 +2,7 @@
   <div class="mx-3">
     <div
       v-if="movies.length"
-      class="grid grid-flow-row grid-cols-1 gap-x-2 gap-y-10 sm:grid-cols-3"
+      class="grid grid-flow-row grid-cols-1 gap-x-4 gap-y-10 sm:grid-cols-3"
     >
       <MovieCard
         v-for="movie in movies"

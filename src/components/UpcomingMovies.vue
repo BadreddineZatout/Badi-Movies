@@ -3,8 +3,8 @@
     <h2 class="mb-10 ml-5 text-3xl font-semibold text-gray-800">
       Upcoming Movies
     </h2>
-    <div class="mx-auto max-w-4xl bg-gray-300">
-      <carousel :items-to-show="3.4" :autoplay="2000" :wrap-around="true">
+    <div class="mx-auto max-w-6xl">
+      <carousel :items-to-show="3.2" :autoplay="2000" :wrap-around="true">
         <slide :index="i" :key="i" v-for="(movie, i) in upcomingMovies">
           <figure class="carousel__item m-0">
             <img
@@ -37,7 +37,7 @@ let upcomingMovies = ref([]);
 
 const fetchUpcomingMovies = async () => {
   const response = await axios.get("/movie/upcoming");
-  upcomingMovies.value = response.data.results.slice(1, 6);
+  upcomingMovies.value = response.data.results.slice(0, 6);
 };
 
 onMounted(async () => {
