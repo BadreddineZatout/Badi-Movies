@@ -1,6 +1,9 @@
 <template>
   <div v-if="movie" class="flex w-full flex-col">
-    <div class="relative flex items-start gap-x-5 py-5 pl-32">
+    <div
+      class="relative flex items-start gap-x-5 py-5 pl-32"
+      :class="{ 'blur-sm': isVideo }"
+    >
       <div class="w-1/5 hover:shadow-2xl">
         <img :src="posterPath" alt="" />
       </div>
@@ -62,16 +65,17 @@
           </button>
         </div>
       </div>
-      <TrailerModel
-        v-if="isVideo"
-        :isVideo="isVideo"
-        :posterPath="posterPath"
-        :mediaURL="mediaURL"
-        :title="movie.title"
-      />
     </div>
     <div></div>
     <div></div>
+    <TrailerModel
+      v-if="isVideo"
+      :isVideo="isVideo"
+      :posterPath="posterPath"
+      :mediaURL="mediaURL"
+      :title="movie.title"
+      @close-emit="closeVideoModal"
+    />
   </div>
 </template>
 
@@ -118,6 +122,10 @@ const openVideoModal = () => {
 const openYoutube = () => {
   if (!movie.value.videos) return;
   return "https://www.youtube.com/embed/" + movie.value.videos.results[0].key;
+};
+
+const closeVideoModal = () => {
+  isVideo.value = false;
 };
 </script>
 
