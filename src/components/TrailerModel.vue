@@ -23,7 +23,7 @@
         </svg>
       </button>
     </div>
-    <div>
+    <div class="p-5">
       <iframe
         class="h-96 w-full"
         v-if="props.isVideo"

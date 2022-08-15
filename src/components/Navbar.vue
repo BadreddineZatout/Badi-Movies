@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="bg-orange-600 py-1 shadow sm:flex sm:flex-wrap sm:items-center sm:justify-between lg:px-12"
+    class="sticky top-0 z-50 bg-orange-600 py-1 shadow sm:flex sm:flex-wrap sm:items-center sm:justify-between lg:px-12"
   >
     <div class="flex items-center justify-start gap-4">
       <div class="flex items-center">

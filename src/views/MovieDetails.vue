@@ -76,6 +76,8 @@
       :title="movie.title"
       @close-emit="closeVideoModal"
     />
+    <Cast :casts="movie.credits.cast" />
+    <Images :images="movie.images.backdrops" />
   </div>
 </template>
 
@@ -83,6 +85,8 @@
 import { computed, inject, onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 import TrailerModel from "../components/TrailerModel.vue";
+import Cast from "../components/Cast.vue";
+import Images from "../components/Images.vue";
 
 const axios = inject("$axios");
 const route = useRoute();
