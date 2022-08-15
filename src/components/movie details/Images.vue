@@ -5,7 +5,7 @@
       <div
         v-for="image in images"
         :key="image.id"
-        class="w-1/4 p-2 shadow-lg hover:scale-105"
+        class="w-fit py-2 px-4 shadow-lg hover:scale-105 hover:cursor-pointer"
       >
         <img :src="movieImage(image)" />
       </div>

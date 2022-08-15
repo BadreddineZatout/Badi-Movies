@@ -5,7 +5,7 @@
       <div
         v-for="cast in casts"
         :key="cast.id"
-        class="w-1/6 p-2 shadow-lg hover:scale-105"
+        class="w-1/6 p-2 shadow-lg hover:scale-105 hover:cursor-pointer"
       >
         <img :src="castProfileImage(cast)" />
         <div class="mt-2 flex justify-between gap-x-2">

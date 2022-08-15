@@ -6,9 +6,8 @@
 </template>
 
 <script setup>
-import PopularMovies from "../components/PopularMovies.vue";
-import UpcomingMovies from "../components/UpcomingMovies.vue";
+import PopularMovies from "../components/movie/PopularMovies.vue";
+import UpcomingMovies from "../components/movie/UpcomingMovies.vue";
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

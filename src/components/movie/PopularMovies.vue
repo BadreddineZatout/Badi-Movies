@@ -35,7 +35,7 @@
 
 <script setup>
 import { inject, onMounted, ref } from "vue";
-import MovieCard from "./MovieCard.vue";
+import MovieCard from "../movie details/MovieCard.vue";
 
 const axios = inject("$axios");
 let movies = ref([]);
